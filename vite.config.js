@@ -7,4 +7,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
   plugins: [react(), tailwindcss()],
+  // 5173 is clan-ms CMS and 5180 is TipVision admin on this machine.
+  server: { port: 5190, strictPort: true },
+  preview: { port: 5191, strictPort: true },
 });

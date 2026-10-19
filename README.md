@@ -7,9 +7,9 @@ and Framer Motion. No backend: every call to action is a `mailto:` link.
 
 ```bash
 npm ci
-npm run dev        # http://localhost:5173
+npm run dev        # http://localhost:5190
 npm run build      # static files in dist/
-npm run preview    # serve dist/ to check the production build
+npm run preview    # http://localhost:5191, serves dist/ to check the production build
 ```
 
 Node 22 (Vite 8 needs 20.19+ or 22.12+).
