@@ -2,7 +2,7 @@
 export const site = {
   name: 'iSynchron',
   domain: 'isynchron.com',
-  email: 'hello@isynchron.com',
+  email: 'peternvch@gmail.com',
   social: {
     linkedin: 'https://www.linkedin.com/',
     twitter: 'https://x.com/',
