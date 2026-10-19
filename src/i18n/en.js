@@ -17,15 +17,15 @@ export const en = {
     connect: 'Connect',
   },
   hero: {
-    eyebrow: 'A creative workspace · Ideas × Internet × AI',
+    eyebrow: 'Independent workspace · Mobile apps',
+    // Each entry rises in on its own and never splits across lines, so keep pairs together.
     headline: [
-      { text: 'Synchronizing' },
-      { text: 'AI', glow: true },
-      { text: '&', breakBefore: true },
-      { text: 'Human', glow: true },
-      { text: 'Potential.', glow: true },
+      { text: 'Simple apps,' },
+      { text: 'in sync', glow: true },
+      { text: 'with', breakBefore: true },
+      { text: 'everyday life.', glow: true },
     ],
-    sub: 'Where breakthrough ideas meet the power of the internet and artificial intelligence to create real value, every day.',
+    sub: 'Small, thoughtful phone apps for the things people do every day — from tallying tips after a shift to remembering a family’s memorial days.',
     primary: 'Explore the Apps',
     secondary: 'Read Our Vision',
     building: 'Now building:',
@@ -35,13 +35,12 @@ export const en = {
   philosophy: {
     eyebrow: 'Philosophy',
     title: 'Technology only matters when it touches an ordinary day.',
-    intro:
-      'Three principles shape everything we build, from the first line of code to the last button.',
+    intro: 'Three principles shape everything we build, from the first idea to the last button.',
     values: [
       {
-        title: 'AI for Everyone',
+        title: 'Technology for Everyone',
         lead: 'Demystifying and democratizing technology.',
-        body: "AI shouldn't be reserved for engineers. We hide the complexity behind a single tap: snap a receipt, and the machine takes care of the rest.",
+        body: "Good technology shouldn't need a manual. We hide the complexity behind a single tap: snap a receipt, and the app takes care of the rest.",
         example: 'TipVision reads POS receipts for you',
       },
       {
@@ -53,21 +52,22 @@ export const en = {
       {
         title: 'Constant Evolution',
         lead: 'Always in sync with the future.',
-        body: "Ship small, listen, improve every week. When a better AI model arrives, the product moves with it, and people don't have to change their habits.",
-        example: 'Switching AI models takes one line of config',
+        body: 'Ship small, listen, improve every week. The apps keep getting better while the way you use them stays familiar.',
+        example: 'TipVision already handles 11 currencies and clock changes',
       },
     ],
   },
   vision: {
     eyebrow: 'Vision',
     quote: {
-      before: "The future of AI isn't in a lab. It's in ",
-      glow: 'the pocket of a nail tech at the end of a shift',
-      after: ", in every family's book of ancestors, in your ordinary day.",
+      before:
+        "We don't build giant platforms. We build small apps that live on the phone in your pocket and ",
+      glow: 'make one part of your day a little easier',
+      after: '.',
     },
     missionLabel: 'Mission',
     mission:
-      "iSynchron is a creative workspace dedicated to synchronizing ideas, the digital internet revolution and artificial intelligence, to bring genuine, tangible value to people's everyday lives.",
+      "iSynchron is an independent workspace that turns everyday hassles into simple mobile apps — using the internet and, where it genuinely helps, AI — to bring real, tangible value to people's daily lives.",
     stepsTitle: 'How we sync',
     stepLabel: 'Step',
     steps: [
@@ -76,8 +76,8 @@ export const en = {
         body: 'Every product starts from a real annoyance: tallying tips after a shift, forgetting a memorial day, not knowing what to call a relative.',
       },
       {
-        title: 'Sync AI, keep people in control',
-        body: "AI does the heavy lifting; people always have the final say. Wherever there's an AI button, there's a manual one right beside it.",
+        title: 'Let the app do the tedious part',
+        body: "Scanning, sorting and adding up happen for you; people always have the final say. Wherever there's an AI button, there's a manual one right beside it.",
       },
       {
         title: 'Ship and evolve',
@@ -96,14 +96,13 @@ export const en = {
     titleLead: 'Two apps.',
     titleGlow: 'Perfectly in sync.',
     intro:
-      'Each app solves an everyday problem with the internet and AI. The illustrations are redrawn in code from the real interfaces in development.',
+      'Each app takes on one thing you already do every day — and makes it quicker, simpler and easier to remember.',
     learnMore: 'Learn more',
     emailUs: 'email us',
     dialog: {
       problem: 'The problem',
       features: 'What it does',
       platforms: 'Platforms',
-      stack: 'Tech stack',
       close: 'Close',
     },
     items: {
@@ -179,7 +178,7 @@ export const en = {
     eyebrow: 'Connect',
     titleLead: 'Join the',
     titleGlow: 'sync.',
-    body: 'Have an idea, want early access, or just want to talk about AI and everyday life? Our inbox is always open.',
+    body: 'Have an idea for an everyday app, want early access, or just want to say hi? Our inbox is always open.',
     cta: 'Say hello',
     ctaSubject: 'Hello iSynchron',
     navLabel: 'Footer',

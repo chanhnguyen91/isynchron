@@ -30,7 +30,7 @@ src/
 ├── index.css               Tailwind theme tokens, glass card, gradient text, grid backdrop
 ├── data/
 │   ├── site.js             contact email, social links, section ids — edit before going live
-│   └── products.js         TipVision and Clan-MS facts (platforms, stack, colours)
+│   └── products.js         TipVision and Clan-MS facts (platforms, icons, colours)
 ├── i18n/
 │   ├── en.js / vi.js       every visible string, English (default) and Vietnamese
 │   └── index.jsx           language list, provider, useT()

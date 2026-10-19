@@ -5,7 +5,7 @@ import { mailto } from '../data/site.js';
 import { useT } from '../i18n/index.jsx';
 import { Bell, Check, Close } from './icons.jsx';
 
-/** "Learn more" dialog: the problem, every feature, the stack, and a way to hear more. */
+/** "Learn more" dialog: the problem, every feature, where it runs, and a way to hear more. */
 export default function ProductDetails({ product, onClose }) {
   const t = useT();
   const labels = t.products.dialog;
@@ -99,24 +99,9 @@ export default function ProductDetails({ product, onClose }) {
               </ul>
             </div>
 
-            <div className="relative mt-8 grid gap-6 sm:grid-cols-2">
-              <div>
-                <h4 className="eyebrow">{labels.platforms}</h4>
-                <p className="mt-3 text-sm text-zinc-300">{product.platforms.join(' · ')}</p>
-              </div>
-              <div>
-                <h4 className="eyebrow">{labels.stack}</h4>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {product.stack.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="relative mt-8">
+              <h4 className="eyebrow">{labels.platforms}</h4>
+              <p className="mt-3 text-sm text-zinc-300">{product.platforms.join(' · ')}</p>
             </div>
 
             <div className="relative mt-10 flex flex-col gap-3 sm:flex-row">

@@ -1,7 +1,8 @@
-// Language-neutral facts about each product. The words (tagline, features, status…) live in
-// src/i18n/en.js and vi.js under `products.items[id]`, taken from what the two apps actually
-// do today (tip-vision docs/PLAN.md, clan-ms docs/PROJECT_HANDBOOK.md and their mobile apps).
-// Keep both true: if a feature is removed from an app, remove it in both languages.
+// Language-neutral facts about each product (platforms, icons, colours). The words (tagline,
+// features, status…) live in src/i18n/en.js and vi.js under `products.items[id]`, taken from
+// what the two apps actually do today (tip-vision docs/PLAN.md, clan-ms
+// docs/PROJECT_HANDBOOK.md and their mobile apps). Keep both true: if a feature is removed
+// from an app, remove it in both languages.
 
 export const products = [
   {
@@ -9,7 +10,6 @@ export const products = [
     name: 'TipVision',
     platforms: ['iOS', 'Android'],
     icons: ['scan', 'wallet', 'hand'],
-    stack: ['Expo / React Native', 'NestJS', 'PostgreSQL', 'Gemini Vision'],
     accent: {
       from: '#00D06C',
       to: '#2563EB',
@@ -20,9 +20,8 @@ export const products = [
   {
     id: 'clan-ms',
     name: 'Clan-MS',
-    platforms: ['iOS', 'Android', 'Web CMS'],
+    platforms: ['iOS', 'Android', 'Web'],
     icons: ['tree', 'chat', 'moon'],
-    stack: ['Expo / React Native', 'NestJS', 'PostgreSQL ltree', 'React CMS'],
     accent: {
       from: '#C0392B',
       to: '#C59B27',

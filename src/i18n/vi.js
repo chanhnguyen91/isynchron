@@ -16,22 +16,15 @@ export const vi = {
     connect: 'Kết nối',
   },
   hero: {
-    eyebrow: 'Không gian sáng tạo · Ý tưởng × Internet × AI',
+    eyebrow: 'Không gian độc lập · Ứng dụng di động',
     headline: [
-      { text: 'Đồng' },
-      { text: 'bộ' },
-      { text: 'hóa' },
-      { text: 'Trí', glow: true },
-      { text: 'tuệ', glow: true },
-      { text: 'Nhân', glow: true },
-      { text: 'tạo', glow: true },
-      { text: '&', breakBefore: true },
-      { text: 'Tiềm', glow: true },
-      { text: 'năng', glow: true },
-      { text: 'Con', glow: true },
-      { text: 'người.', glow: true },
+      { text: 'Ứng dụng' },
+      { text: 'giản dị,' },
+      { text: 'hòa nhịp', glow: true },
+      { text: 'đời sống', glow: true, breakBefore: true },
+      { text: 'mỗi ngày.', glow: true },
     ],
-    sub: 'Nơi những ý tưởng đột phá hội tụ cùng sức mạnh của internet và Trí tuệ Nhân tạo để kiến tạo giá trị mỗi ngày.',
+    sub: 'Những ứng dụng điện thoại nhỏ gọn cho việc thường ngày — từ ghi tiền tip cuối ca đến nhớ ngày giỗ trong họ.',
     primary: 'Khám phá Ứng dụng',
     secondary: 'Đọc Tầm nhìn của chúng tôi',
     building: 'Đang xây dựng:',
@@ -42,12 +35,12 @@ export const vi = {
     eyebrow: 'Triết lý',
     title: 'Công nghệ chỉ có ý nghĩa khi chạm được vào một ngày bình thường.',
     intro:
-      'Ba nguyên tắc định hình mọi thứ chúng tôi xây dựng, từ dòng code đầu tiên đến nút bấm cuối cùng.',
+      'Ba nguyên tắc định hình mọi thứ chúng tôi xây dựng, từ ý tưởng đầu tiên đến nút bấm cuối cùng.',
     values: [
       {
-        title: 'AI cho Mọi người',
+        title: 'Công nghệ cho Mọi người',
         lead: 'Giải mã và bình dân hóa công nghệ.',
-        body: 'AI không chỉ dành cho kỹ sư. Chúng tôi giấu sự phức tạp sau một cú chạm: chụp một tấm hóa đơn là đủ, phần còn lại để máy lo.',
+        body: 'Công nghệ tốt không cần sách hướng dẫn. Chúng tôi giấu sự phức tạp sau một cú chạm: chụp một tấm hóa đơn là đủ, phần còn lại để app lo.',
         example: 'TipVision đọc hóa đơn POS thay bạn',
       },
       {
@@ -59,21 +52,22 @@ export const vi = {
       {
         title: 'Tiến hóa Không ngừng',
         lead: 'Luôn đồng bộ với tương lai.',
-        body: 'Phát hành nhỏ, lắng nghe, cải tiến mỗi tuần. Khi một mô hình AI tốt hơn ra đời, sản phẩm đổi theo mà người dùng không phải đổi thói quen.',
-        example: 'Đổi mô hình AI chỉ bằng một dòng cấu hình',
+        body: 'Phát hành nhỏ, lắng nghe, cải tiến mỗi tuần. Ứng dụng tốt lên dần mà cách dùng vẫn quen thuộc.',
+        example: 'TipVision đã xử lý 11 loại tiền và giờ đổi mùa',
       },
     ],
   },
   vision: {
     eyebrow: 'Tầm nhìn',
     quote: {
-      before: 'Tương lai của AI không nằm trong phòng thí nghiệm. Nó nằm trong ',
-      glow: 'túi áo người thợ nail cuối ca',
-      after: ', trong cuốn gia phả của mỗi dòng họ, trong một ngày bình thường của bạn.',
+      before:
+        'Chúng tôi không làm những nền tảng khổng lồ. Chúng tôi làm những ứng dụng nhỏ, nằm gọn trong chiếc điện thoại của bạn và ',
+      glow: 'giúp một việc trong ngày nhẹ nhàng hơn',
+      after: '.',
     },
     missionLabel: 'Sứ mệnh',
     mission:
-      'iSynchron là một không gian làm việc sáng tạo dành riêng cho việc đồng bộ hóa các ý tưởng, cuộc cách mạng internet kỹ thuật số và Trí tuệ Nhân tạo, nhằm mang lại giá trị đích thực, hữu hình cho đời sống thường ngày của mọi người.',
+      'iSynchron là một không gian làm việc độc lập, biến những phiền toái thường ngày thành ứng dụng di động giản dị — dùng internet và AI ở chỗ thật sự có ích — để mang lại giá trị hữu hình cho đời sống hằng ngày của mọi người.',
     stepsTitle: 'Cách chúng tôi đồng bộ',
     stepLabel: 'Bước',
     steps: [
@@ -82,8 +76,8 @@ export const vi = {
         body: 'Mỗi sản phẩm bắt đầu từ một phiền toái có thật: đếm tip cuối ca, quên ngày giỗ, không biết gọi người họ hàng là gì.',
       },
       {
-        title: 'Đồng bộ AI, giữ quyền cho con người',
-        body: 'AI làm phần nặng, con người luôn có quyền sửa. Chỗ nào có nút AI, chỗ đó có nút nhập tay.',
+        title: 'Để app làm phần việc nhàm chán',
+        body: 'Quét, phân loại, cộng dồn để app lo; con người luôn có quyền sửa. Chỗ nào có nút AI, chỗ đó có nút nhập tay.',
       },
       {
         title: 'Phát hành và tiến hóa',
@@ -102,14 +96,13 @@ export const vi = {
     titleLead: 'Hai ứng dụng.',
     titleGlow: 'Một nhịp đồng bộ.',
     intro:
-      'Mỗi ứng dụng giải một bài toán đời thường bằng internet và AI. Hình minh họa được vẽ lại bằng code từ chính giao diện đang phát triển.',
+      'Mỗi ứng dụng đảm nhận một việc bạn vẫn làm hằng ngày, và giúp nó nhanh hơn, gọn hơn, ít phải nhớ hơn.',
     learnMore: 'Tìm hiểu thêm',
     emailUs: 'gửi email cho chúng tôi',
     dialog: {
       problem: 'Vấn đề',
       features: 'Ứng dụng làm được gì',
       platforms: 'Nền tảng',
-      stack: 'Công nghệ',
       close: 'Đóng',
     },
     items: {
@@ -185,7 +178,7 @@ export const vi = {
     eyebrow: 'Kết nối',
     titleLead: 'Tham gia',
     titleGlow: 'sự đồng bộ.',
-    body: 'Có một ý tưởng, muốn dùng thử sớm, hay chỉ muốn trò chuyện về AI và đời sống? Hộp thư của chúng tôi luôn mở.',
+    body: 'Có ý tưởng cho một ứng dụng đời thường, muốn dùng thử sớm, hay chỉ muốn chào một câu? Hộp thư của chúng tôi luôn mở.',
     cta: 'Gửi lời chào',
     ctaSubject: 'Xin chào iSynchron',
     navLabel: 'Chân trang',
