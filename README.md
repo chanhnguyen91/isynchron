@@ -54,15 +54,24 @@ src/
 
 ## Deploy to GitHub Pages
 
-1. Push to `main` on GitHub.
-2. Repository **Settings → Pages → Source: GitHub Actions**. The workflow in
-   `.github/workflows/deploy.yml` builds and publishes `dist/` on every push.
-3. Custom domain: `public/CNAME` holds `isynchron.com`. At the domain registrar, point the apex
-   domain at GitHub Pages (A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
-   `185.199.111.153`) and add a `www` CNAME to `<username>.github.io`. Then tick **Enforce HTTPS**.
+1. The repository must be **public** (GitHub Pages on a private repository needs a paid plan).
+2. **Settings → Pages → Build and deployment → Source: GitHub Actions.** The workflow in
+   `.github/workflows/deploy.yml` builds and publishes `dist/` on every push to `main`.
+3. **Settings → Pages → Custom domain:** `isynchron.com`, then **Enforce HTTPS** once the
+   certificate is ready. (A workflow deployment ignores `public/CNAME`; the setting is what
+   counts. The file is kept only as a record of the domain.)
+4. DNS at Cloudflare (**DNS only**, grey cloud, so GitHub can issue the HTTPS certificate):
 
-Without a custom domain (served from `username.github.io/isynchron/`), delete `public/CNAME` and
-build with `VITE_BASE=/isynchron/` (set it as `env` on the build step in the workflow).
+   | Type  | Name  | Content                   |
+   | ----- | ----- | ------------------------- |
+   | A     | `@`   | `185.199.108.153`         |
+   | A     | `@`   | `185.199.109.153`         |
+   | A     | `@`   | `185.199.110.153`         |
+   | A     | `@`   | `185.199.111.153`         |
+   | CNAME | `www` | `chanhnguyen91.github.io` |
+
+Without a custom domain (served from `username.github.io/isynchron/`), build with
+`VITE_BASE=/isynchron/` (set it as `env` on the build step in the workflow).
 
 ## Accessibility and motion
 
