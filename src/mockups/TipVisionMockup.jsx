@@ -27,7 +27,16 @@ function Dashboard() {
     <g>
       {/* Header */}
       <rect x="14" y="40" width="32" height="32" rx="11" fill={C.mint} />
-      <rect x="21" y="50" width="18" height="12" rx="2.5" fill="none" stroke={C.onMint} strokeWidth="1.6" />
+      <rect
+        x="21"
+        y="50"
+        width="18"
+        height="12"
+        rx="2.5"
+        fill="none"
+        stroke={C.onMint}
+        strokeWidth="1.6"
+      />
       <circle cx="30" cy="56" r="2.6" fill="none" stroke={C.onMint} strokeWidth="1.5" />
       <T x={54} y={55} size={13} weight={800} ls={-0.3}>
         Dashboard
@@ -42,7 +51,13 @@ function Dashboard() {
       </T>
       <circle cx="228" cy="56" r="14" fill={C.mintText} />
       <circle cx="228" cy="52.5" r="3.6" fill="none" stroke="#fff" strokeWidth="1.5" />
-      <path d="M221.5 63c1.2-3 3.7-4.6 6.5-4.6s5.3 1.6 6.5 4.6" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M221.5 63c1.2-3 3.7-4.6 6.5-4.6s5.3 1.6 6.5 4.6"
+        fill="none"
+        stroke="#fff"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
 
       {/* Greeting */}
       <T x={14} y={99} size={17} weight={800} ls={-0.5}>
@@ -53,7 +68,13 @@ function Dashboard() {
         PRO
       </T>
       <circle cx="228" cy="94" r="12" fill="#EAEDFF" />
-      <path d="M223.5 97v-3.5a4.5 4.5 0 0 1 9 0V97l1 1.5h-11l1-1.5z" fill="none" stroke={C.ink} strokeWidth="1.3" strokeLinejoin="round" />
+      <path
+        d="M223.5 97v-3.5a4.5 4.5 0 0 1 9 0V97l1 1.5h-11l1-1.5z"
+        fill="none"
+        stroke={C.ink}
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
       <circle cx="235" cy="87" r="3" fill={C.mint} stroke="#fff" strokeWidth="1.2" />
 
       {/* Earnings card */}
@@ -113,7 +134,16 @@ function Dashboard() {
 
       <rect x="12" y="292" width="74" height="66" rx="13" fill={C.mint} />
       <circle cx="49" cy="311" r="10" fill="rgba(5,46,22,0.12)" />
-      <rect x="43" y="306.5" width="12" height="9" rx="2" fill="none" stroke={C.onMint} strokeWidth="1.4" />
+      <rect
+        x="43"
+        y="306.5"
+        width="12"
+        height="9"
+        rx="2"
+        fill="none"
+        stroke={C.onMint}
+        strokeWidth="1.4"
+      />
       <circle cx="49" cy="311" r="2.3" fill="none" stroke={C.onMint} strokeWidth="1.3" />
       <T x={49} y={335} size={9} weight={800} fill={C.onMint} anchor="middle">
         AI Scan
@@ -124,7 +154,12 @@ function Dashboard() {
 
       <rect x="91" y="292" width="74" height="66" rx="13" fill="#fff" stroke={C.line} />
       <circle cx="128" cy="311" r="10" fill="#E6ECFF" />
-      <path d="M123 307h8M123 310.5h6M123 314h3.5" stroke={C.blue} strokeWidth="1.4" strokeLinecap="round" />
+      <path
+        d="M123 307h8M123 310.5h6M123 314h3.5"
+        stroke={C.blue}
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
       <path d="M129 316.5l4.5-4.5 1.5 1.5-4.5 4.5h-1.5z" fill={C.blue} />
       <T x={128} y={335} size={9} weight={800} anchor="middle">
         Type In
@@ -136,7 +171,12 @@ function Dashboard() {
       <rect x="170" y="292" width="74" height="66" rx="13" fill={C.navy} />
       <circle cx="207" cy="311" r="10" fill="rgba(255,255,255,0.1)" />
       <circle cx="207" cy="312" r="5" fill="none" stroke="#32E27C" strokeWidth="1.4" />
-      <path d="M207 309.5v2.7l1.6 1M205.5 305.5h3" stroke="#32E27C" strokeWidth="1.4" strokeLinecap="round" />
+      <path
+        d="M207 309.5v2.7l1.6 1M205.5 305.5h3"
+        stroke="#32E27C"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
       <T x={207} y={335} size={9} weight={800} fill="#fff" anchor="middle">
         Clock-In
       </T>
@@ -147,8 +187,22 @@ function Dashboard() {
       {/* Upcoming shift */}
       <rect x="12" y="370" width="232" height="84" rx="16" fill="#fff" stroke={C.line} />
       <circle cx="34" cy="392" r="11" fill="#EAEDFF" />
-      <rect x="29" y="388" width="10" height="9" rx="1.8" fill="none" stroke={C.blueText} strokeWidth="1.3" />
-      <path d="M29 391h10M31.5 386.5v2.5M36.5 386.5v2.5" stroke={C.blueText} strokeWidth="1.3" strokeLinecap="round" />
+      <rect
+        x="29"
+        y="388"
+        width="10"
+        height="9"
+        rx="1.8"
+        fill="none"
+        stroke={C.blueText}
+        strokeWidth="1.3"
+      />
+      <path
+        d="M29 391h10M31.5 386.5v2.5M36.5 386.5v2.5"
+        stroke={C.blueText}
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
       <T x={52} y={389} size={6.6} weight={800} fill={C.blueText} ls={0.6}>
         UPCOMING SHIFT
       </T>
@@ -161,7 +215,13 @@ function Dashboard() {
       </T>
       <rect x="22" y="412" width="212" height="32" rx="10" fill={C.low} />
       <circle cx="36" cy="428" r="5" fill="none" stroke={C.muted} strokeWidth="1.2" />
-      <path d="M36 425.5v2.7l1.6 1" stroke={C.muted} strokeWidth="1.2" strokeLinecap="round" fill="none" />
+      <path
+        d="M36 425.5v2.7l1.6 1"
+        stroke={C.muted}
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        fill="none"
+      />
       <T x={46} y={431} size={8.4} weight={600}>
         09:00 AM – 06:00 PM
       </T>
@@ -181,8 +241,22 @@ function Dashboard() {
       <T x={30} y={503} size={6.6} weight={700} fill={C.mintText} anchor="middle">
         Home
       </T>
-      <rect x="72" y="478" width="13" height="12" rx="2.4" fill="none" stroke={C.muted} strokeWidth="1.3" />
-      <path d="M72 482h13M75.5 476.5v3M81.5 476.5v3" stroke={C.muted} strokeWidth="1.3" strokeLinecap="round" />
+      <rect
+        x="72"
+        y="478"
+        width="13"
+        height="12"
+        rx="2.4"
+        fill="none"
+        stroke={C.muted}
+        strokeWidth="1.3"
+      />
+      <path
+        d="M72 482h13M75.5 476.5v3M81.5 476.5v3"
+        stroke={C.muted}
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
       <T x={78.5} y={503} size={6.6} weight={600} fill={C.muted} anchor="middle">
         Roster
       </T>
@@ -194,13 +268,23 @@ function Dashboard() {
         strokeWidth="1.6"
         strokeLinecap="round"
       />
-      <path d="M173 490v-5M178 490v-11M183 490v-8" stroke={C.muted} strokeWidth="2.4" strokeLinecap="round" />
+      <path
+        d="M173 490v-5M178 490v-11M183 490v-8"
+        stroke={C.muted}
+        strokeWidth="2.4"
+        strokeLinecap="round"
+      />
       <T x={178} y={503} size={6.6} weight={600} fill={C.muted} anchor="middle">
         Reports
       </T>
       <circle cx="226" cy="483.5" r="7" fill="none" stroke={C.muted} strokeWidth="1.3" />
       <circle cx="226" cy="481.5" r="2.3" fill="none" stroke={C.muted} strokeWidth="1.2" />
-      <path d="M221.8 488.6c1-1.7 2.5-2.6 4.2-2.6s3.2.9 4.2 2.6" fill="none" stroke={C.muted} strokeWidth="1.2" />
+      <path
+        d="M221.8 488.6c1-1.7 2.5-2.6 4.2-2.6s3.2.9 4.2 2.6"
+        fill="none"
+        stroke={C.muted}
+        strokeWidth="1.2"
+      />
       <T x={226} y={503} size={6.6} weight={600} fill={C.muted} anchor="middle">
         Profile
       </T>
@@ -226,7 +310,16 @@ function Receipt() {
   return (
     <g fontFamily={MONO}>
       <path d={receiptPath(150, 204)} fill="#FCFCF8" filter="url(#tv-shadow)" />
-      <T x={75} y={24} size={8.2} weight={800} fill="#1A1A1A" anchor="middle" ls={0.4} fontFamily={MONO}>
+      <T
+        x={75}
+        y={24}
+        size={8.2}
+        weight={800}
+        fill="#1A1A1A"
+        anchor="middle"
+        ls={0.4}
+        fontFamily={MONO}
+      >
         GLOSS &amp; GLAM STUDIO
       </T>
       <T x={75} y={36} size={5.8} weight={500} fill="#777" anchor="middle" fontFamily={MONO}>
@@ -238,7 +331,15 @@ function Receipt() {
           <T x={12} y={60 + i * 14} size={6.8} weight={500} fill="#333" fontFamily={MONO}>
             {label}
           </T>
-          <T x={138} y={60 + i * 14} size={6.8} weight={500} fill="#333" anchor="end" fontFamily={MONO}>
+          <T
+            x={138}
+            y={60 + i * 14}
+            size={6.8}
+            weight={500}
+            fill="#333"
+            anchor="end"
+            fontFamily={MONO}
+          >
             {amount}
           </T>
         </g>
@@ -251,14 +352,32 @@ function Receipt() {
         140.00
       </T>
       {/* Parsed with confidence: green. Unsure (crease over the line): amber, as in the app. */}
-      <rect x="7" y="119" width="136" height="13" rx="3" fill="rgba(0,208,108,0.14)" stroke={C.mint} strokeWidth="0.8" />
+      <rect
+        x="7"
+        y="119"
+        width="136"
+        height="13"
+        rx="3"
+        fill="rgba(0,208,108,0.14)"
+        stroke={C.mint}
+        strokeWidth="0.8"
+      />
       <T x={12} y={128.5} size={6.8} weight={700} fill="#14532D" fontFamily={MONO}>
         CARD TIP
       </T>
       <T x={138} y={128.5} size={6.8} weight={700} fill="#14532D" anchor="end" fontFamily={MONO}>
         25.00
       </T>
-      <rect x="7" y="135" width="136" height="13" rx="3" fill="rgba(234,179,8,0.16)" stroke={C.amber} strokeWidth="0.8" />
+      <rect
+        x="7"
+        y="135"
+        width="136"
+        height="13"
+        rx="3"
+        fill="rgba(234,179,8,0.16)"
+        stroke={C.amber}
+        strokeWidth="0.8"
+      />
       <T x={12} y={144.5} size={6.8} weight={700} fill="#713F12" fontFamily={MONO}>
         CASH TIP
       </T>
@@ -273,10 +392,12 @@ function Receipt() {
         185.00
       </T>
       <g fill="#2A2A2A">
-        {[2, 1, 3, 1, 2, 1, 1, 3, 2, 1, 2, 3, 1, 1, 2, 1, 3, 2, 1, 2, 1, 3, 1, 2].map((w, i, all) => {
-          const x = 30 + all.slice(0, i).reduce((sum, v) => sum + v + 1.6, 0);
-          return <rect key={i} x={x} y="181" width={w} height="14" />;
-        })}
+        {[2, 1, 3, 1, 2, 1, 1, 3, 2, 1, 2, 3, 1, 1, 2, 1, 3, 2, 1, 2, 1, 3, 1, 2].map(
+          (w, i, all) => {
+            const x = 30 + all.slice(0, i).reduce((sum, v) => sum + v + 1.6, 0);
+            return <rect key={i} x={x} y="181" width={w} height="14" />;
+          },
+        )}
       </g>
       {/* Scanner beam sweeping the slip. */}
       <motion.g
@@ -284,7 +405,15 @@ function Receipt() {
         transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut' }}
       >
         <rect x="-4" y="0" width="158" height="26" fill="url(#tv-beam)" />
-        <rect x="-4" y="25" width="158" height="1.6" rx="0.8" fill={C.mint} filter="url(#tv-glow)" />
+        <rect
+          x="-4"
+          y="25"
+          width="158"
+          height="1.6"
+          rx="0.8"
+          fill={C.mint}
+          filter="url(#tv-glow)"
+        />
       </motion.g>
     </g>
   );
@@ -325,7 +454,7 @@ function WeekCard() {
   );
 }
 
-export default function TipVisionMockup({ className = '' }) {
+export default function TipVisionMockup({ className = '', title }) {
   return (
     <svg
       viewBox="0 0 520 580"
@@ -334,10 +463,7 @@ export default function TipVisionMockup({ className = '' }) {
       className={className}
       style={{ fontFamily: "'Inter Variable', Inter, sans-serif" }}
     >
-      <title id="tv-title">
-        Minh họa TipVision: bảng thu nhập tháng, nút quét hóa đơn bằng AI và một hóa đơn đang được
-        quét, ô tip tiền mặt tô vàng để kiểm tra lại.
-      </title>
+      <title id="tv-title">{title}</title>
       <defs>
         <linearGradient id="tv-card" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#FFFFFF" />
@@ -374,7 +500,14 @@ export default function TipVisionMockup({ className = '' }) {
           <g filter="url(#tv-shadow)">
             <rect width="132" height="26" rx="13" fill={C.mint} />
             <circle cx="14" cy="13" r="6.5" fill={C.onMint} />
-            <path d="M11 13.2l2 2 3.8-4" fill="none" stroke={C.mint} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M11 13.2l2 2 3.8-4"
+              fill="none"
+              stroke={C.mint}
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
             <T x={26} y={16} size={7.8} weight={800} fill={C.onMint}>
               AI Parsed · 3 fields found
             </T>

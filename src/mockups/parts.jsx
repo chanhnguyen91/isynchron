@@ -6,7 +6,18 @@ export const PHONE = { x: 150, y: 18, width: 272, height: 544 };
 export const SCREEN = { x: 158, y: 26, width: 256, height: 528 };
 
 /** Text with the defaults every mockup label shares. */
-export function T({ x, y, size = 8, weight = 500, fill = '#131B2E', anchor, ls, italic, children, ...rest }) {
+export function T({
+  x,
+  y,
+  size = 8,
+  weight = 500,
+  fill = '#131B2E',
+  anchor,
+  ls,
+  italic,
+  children,
+  ...rest
+}) {
   return (
     <text
       x={x}
@@ -38,7 +49,14 @@ export function Phone({ id, background, statusDark = true, children }) {
         fill="none"
         stroke="rgba(255,255,255,0.10)"
       />
-      <rect x={PHONE.x} y={PHONE.y} width={PHONE.width} height={PHONE.height} rx="45" fill="#0C0C0F" />
+      <rect
+        x={PHONE.x}
+        y={PHONE.y}
+        width={PHONE.width}
+        height={PHONE.height}
+        rx="45"
+        fill="#0C0C0F"
+      />
       <clipPath id={`${id}-screen`}>
         <rect width={SCREEN.width} height={SCREEN.height} rx="37" />
       </clipPath>
@@ -54,7 +72,16 @@ export function Phone({ id, background, statusDark = true, children }) {
           {[3, 5, 7, 9].map((h, i) => (
             <rect key={h} x={200 + i * 3.4} y={23 - h} width="2.2" height={h} rx="0.6" fill={ink} />
           ))}
-          <rect x="216" y="14.5" width="18" height="9" rx="2.6" fill="none" stroke={ink} strokeWidth="1" />
+          <rect
+            x="216"
+            y="14.5"
+            width="18"
+            height="9"
+            rx="2.6"
+            fill="none"
+            stroke={ink}
+            strokeWidth="1"
+          />
           <rect x="217.8" y="16.3" width="12.5" height="5.4" rx="1.4" fill={ink} />
           <rect x="88" y="517" width="80" height="4" rx="2" fill={ink} opacity="0.85" />
         </g>

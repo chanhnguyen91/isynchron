@@ -2,7 +2,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 import { nav } from '../data/site.js';
+import { useT } from '../i18n/index.jsx';
 import { Close, Menu } from './icons.jsx';
+import LanguageSwitch from './LanguageSwitch.jsx';
 import Logo from './Logo.jsx';
 
 /** Which nav section is currently in the middle band of the viewport. */
@@ -24,12 +26,15 @@ function useActiveSection(ids) {
   return active;
 }
 
-const ids = nav.map((item) => item.id);
+// The hero is watched too, so scrolling back to the top clears the highlight.
+const ids = ['top', ...nav];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const active = useActiveSection(ids);
+  const t = useT();
+  const observed = useActiveSection(ids);
+  const active = observed === 'top' ? null : observed;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -48,7 +53,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:pt-4">
       <motion.nav
-        aria-label="Điều hướng chính"
+        aria-label={t.header.navLabel}
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -58,48 +63,50 @@ export default function Header() {
             : 'border border-transparent bg-transparent'
         }`}
       >
-        <a href="#top" aria-label="iSynchron, về đầu trang" onClick={() => setOpen(false)}>
+        <a href="#top" aria-label={t.header.home} onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
-            <li key={item.id}>
+          {nav.map((id) => (
+            <li key={id}>
               <a
-                href={`#${item.id}`}
-                aria-current={active === item.id ? 'true' : undefined}
+                href={`#${id}`}
+                aria-current={active === id ? 'true' : undefined}
                 className="relative rounded-full px-4 py-2 text-sm text-zinc-400 transition-colors hover:text-white aria-[current]:text-white"
               >
-                {active === item.id && (
+                {active === id && (
                   <motion.span
                     layoutId="nav-pill"
                     className="absolute inset-0 -z-10 rounded-full bg-white/[0.08]"
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
-                {item.label}
+                {t.nav[id]}
               </a>
             </li>
           ))}
         </ul>
 
-        <a
-          href="#products"
-          className="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200 md:inline-flex"
-        >
-          Khám phá Ứng dụng
-        </a>
-
-        <button
-          type="button"
-          className="-mr-2 inline-flex size-11 items-center justify-center rounded-xl text-zinc-200 md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? 'Đóng menu' : 'Mở menu'}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <Close className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitch sectionId={active} />
+          <a
+            href="#products"
+            className="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200 lg:inline-flex"
+          >
+            {t.header.cta}
+          </a>
+          <button
+            type="button"
+            className="-mr-2 inline-flex size-11 items-center justify-center rounded-xl text-zinc-200 md:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? t.header.closeMenu : t.header.openMenu}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <Close className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </motion.nav>
 
       <AnimatePresence>
@@ -113,14 +120,14 @@ export default function Header() {
             className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-ink/90 p-2 backdrop-blur-xl md:hidden"
           >
             <ul>
-              {nav.map((item) => (
-                <li key={item.id}>
+              {nav.map((id) => (
+                <li key={id}>
                   <a
-                    href={`#${item.id}`}
+                    href={`#${id}`}
                     onClick={() => setOpen(false)}
                     className="flex min-h-12 items-center rounded-xl px-4 text-base text-zinc-200 hover:bg-white/5"
                   >
-                    {item.label}
+                    {t.nav[id]}
                   </a>
                 </li>
               ))}
@@ -130,7 +137,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="mt-2 flex min-h-12 items-center justify-center rounded-xl bg-white text-base font-semibold text-black"
             >
-              Khám phá Ứng dụng
+              {t.header.cta}
             </a>
           </motion.div>
         )}

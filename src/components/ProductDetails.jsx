@@ -2,10 +2,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 import { mailto } from '../data/site.js';
+import { useT } from '../i18n/index.jsx';
 import { Bell, Check, Close } from './icons.jsx';
 
-/** "Tìm hiểu thêm" dialog: the problem, every feature, the stack, and a way to hear more. */
+/** "Learn more" dialog: the problem, every feature, the stack, and a way to hear more. */
 export default function ProductDetails({ product, onClose }) {
+  const t = useT();
+  const labels = t.products.dialog;
   const closeRef = useRef(null);
 
   useEffect(() => {
@@ -67,7 +70,7 @@ export default function ProductDetails({ product, onClose }) {
                 ref={closeRef}
                 type="button"
                 onClick={onClose}
-                aria-label="Đóng"
+                aria-label={labels.close}
                 className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-300 transition hover:bg-white/10 hover:text-white"
               >
                 <Close className="size-5" />
@@ -75,14 +78,14 @@ export default function ProductDetails({ product, onClose }) {
             </div>
 
             <div className="relative mt-8">
-              <h4 className="eyebrow">Vấn đề</h4>
-              <p className="mt-3 leading-relaxed text-zinc-300">{product.details.problem}</p>
+              <h4 className="eyebrow">{labels.problem}</h4>
+              <p className="mt-3 leading-relaxed text-zinc-300">{product.problem}</p>
             </div>
 
             <div className="relative mt-8">
-              <h4 className="eyebrow">Ứng dụng làm được gì</h4>
+              <h4 className="eyebrow">{labels.features}</h4>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {product.details.features.map((feature) => (
+                {product.features.map((feature) => (
                   <li key={feature} className="flex gap-3 text-sm leading-relaxed text-zinc-300">
                     <span
                       className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full"
@@ -98,13 +101,13 @@ export default function ProductDetails({ product, onClose }) {
 
             <div className="relative mt-8 grid gap-6 sm:grid-cols-2">
               <div>
-                <h4 className="eyebrow">Nền tảng</h4>
+                <h4 className="eyebrow">{labels.platforms}</h4>
                 <p className="mt-3 text-sm text-zinc-300">{product.platforms.join(' · ')}</p>
               </div>
               <div>
-                <h4 className="eyebrow">Công nghệ</h4>
+                <h4 className="eyebrow">{labels.stack}</h4>
                 <ul className="mt-3 flex flex-wrap gap-2">
-                  {product.details.stack.map((item) => (
+                  {product.stack.map((item) => (
                     <li
                       key={item}
                       className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300"
@@ -129,7 +132,7 @@ export default function ProductDetails({ product, onClose }) {
                 onClick={onClose}
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 px-6 text-zinc-300 transition hover:bg-white/5 hover:text-white"
               >
-                Đóng
+                {labels.close}
               </button>
             </div>
           </motion.div>

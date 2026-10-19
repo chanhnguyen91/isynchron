@@ -40,7 +40,15 @@ function Seal({ cx, cy, r }) {
   return (
     <g>
       <circle cx={cx} cy={cy} r={r} fill={C.crimsonDeep} stroke={C.gold} strokeWidth="1.5" />
-      <circle cx={cx} cy={cy} r={r - 4} fill="none" stroke={C.gold} strokeWidth="0.6" opacity="0.6" />
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r - 4}
+        fill="none"
+        stroke={C.gold}
+        strokeWidth="0.6"
+        opacity="0.6"
+      />
       <path
         d={`M${cx} ${cy + 12}V${cy - 1}M${cx} ${cy + 3}l-6-6M${cx} ${cy + 1}l6-6.5M${cx} ${cy - 1}l-3-7`}
         stroke={C.gold}
@@ -59,7 +67,12 @@ function Seal({ cx, cy, r }) {
       ].map(([dx, dy], i) => (
         <circle key={i} cx={cx + dx} cy={cy + dy} r="2.8" fill={C.gold} />
       ))}
-      <path d={`M${cx - 8} ${cy + 12}h16`} stroke={C.gold} strokeWidth="1.2" strokeLinecap="round" />
+      <path
+        d={`M${cx - 8} ${cy + 12}h16`}
+        stroke={C.gold}
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
     </g>
   );
 }
@@ -222,17 +235,85 @@ function Home() {
       <Link d="M80 334v32" delay={0.9} />
       <Link d="M144 334v32" delay={0.9} />
 
-      <Node x={74} y={250} w={64} role="Thủy tổ khảo" name="Văn Phúc" initial="P" tone={C.navy} delay={0.1} />
-      <Node x={150} y={250} w={64} role="Thủy tổ tỷ" name="Thị Hiền" initial="H" tone={C.crimson} delay={0.2} />
-      <Node x={52} y={306} role="Trưởng nam" name="Văn An" initial="A" tone={C.navy} badge="1" delay={0.6} />
-      <Node x={116} y={306} role="Thứ nam" name="Văn Bình" initial="B" tone={C.navy} badge="2" delay={0.7} />
-      <Node x={180} y={306} role="Trưởng nữ" name="Thị Cúc" initial="C" tone={C.crimson} badge="3" delay={0.8} />
+      <Node
+        x={74}
+        y={250}
+        w={64}
+        role="Thủy tổ khảo"
+        name="Văn Phúc"
+        initial="P"
+        tone={C.navy}
+        delay={0.1}
+      />
+      <Node
+        x={150}
+        y={250}
+        w={64}
+        role="Thủy tổ tỷ"
+        name="Thị Hiền"
+        initial="H"
+        tone={C.crimson}
+        delay={0.2}
+      />
+      <Node
+        x={52}
+        y={306}
+        role="Trưởng nam"
+        name="Văn An"
+        initial="A"
+        tone={C.navy}
+        badge="1"
+        delay={0.6}
+      />
+      <Node
+        x={116}
+        y={306}
+        role="Thứ nam"
+        name="Văn Bình"
+        initial="B"
+        tone={C.navy}
+        badge="2"
+        delay={0.7}
+      />
+      <Node
+        x={180}
+        y={306}
+        role="Trưởng nữ"
+        name="Thị Cúc"
+        initial="C"
+        tone={C.crimson}
+        badge="3"
+        delay={0.8}
+      />
       <Node x={52} y={366} role="Bạn" name="Văn Đức" initial="Đ" tone={C.crimson} you delay={1.0} />
-      <Node x={116} y={366} role="Trưởng nam" name="Văn Khang" initial="K" tone={C.navy} badge="1" delay={1.1} />
+      <Node
+        x={116}
+        y={366}
+        role="Trưởng nam"
+        name="Văn Khang"
+        initial="K"
+        tone={C.navy}
+        badge="1"
+        delay={1.1}
+      />
 
       {/* Kinship shortcut */}
-      <rect x="12" y="422" width="232" height="34" rx="12" fill={C.navyTint} stroke={C.navyBorder} />
-      <path d="M26 433h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-5l-3 2.5V443h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z" fill="none" stroke={C.navy} strokeWidth="1.2" strokeLinejoin="round" />
+      <rect
+        x="12"
+        y="422"
+        width="232"
+        height="34"
+        rx="12"
+        fill={C.navyTint}
+        stroke={C.navyBorder}
+      />
+      <path
+        d="M26 433h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-5l-3 2.5V443h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z"
+        fill="none"
+        stroke={C.navy}
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
       <T x={46} y={442} size={8} weight={600} fill={C.navy}>
         Tra xưng hô với người trong họ
       </T>
@@ -243,7 +324,13 @@ function Home() {
       {/* Five icon-only tabs; the tree is selected. */}
       <rect y="466" width="256" height="62" fill="#fff" />
       <line x1="0" y1="466.5" x2="256" y2="466.5" stroke={C.border} />
-      <g fill="none" stroke={C.muted} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <g
+        fill="none"
+        stroke={C.muted}
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="18" y="478" width="16" height="13" rx="2.5" />
         <path d="M21.5 482h9M21.5 485h9M21.5 488h5" />
         <rect x="119.5" y="478" width="17" height="14" rx="2.5" />
@@ -266,7 +353,7 @@ function Home() {
   );
 }
 
-export default function ClanMsMockup({ className = '' }) {
+export default function ClanMsMockup({ className = '', title }) {
   return (
     <svg
       viewBox="0 0 520 580"
@@ -275,10 +362,7 @@ export default function ClanMsMockup({ className = '' }) {
       className={className}
       style={{ fontFamily: "'Inter Variable', Inter, sans-serif" }}
     >
-      <title id="cm-title">
-        Minh họa Clan-MS: trang chủ dòng họ với thẻ ngày giỗ âm lịch, phả đồ ba đời, thẻ tra xưng
-        hô trả lời “Chú” kèm lý do, và một thông báo chính thức của dòng họ.
-      </title>
+      <title id="cm-title">{title}</title>
       <defs>
         <radialGradient id="cm-banner" cx="0.3" cy="0.4" r="0.9">
           <stop offset="0" stopColor="#B42323" />
@@ -312,7 +396,14 @@ export default function ClanMsMockup({ className = '' }) {
           <g filter="url(#cm-shadow)">
             <rect width="122" height="30" rx="15" fill="#fff" />
             <circle cx="16" cy="15" r="7" fill={C.success} />
-            <path d="M12.8 15.2l2.2 2.2 4-4.4" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M12.8 15.2l2.2 2.2 4-4.4"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
             <T x={29} y={18} size={7.2} weight={600} fill={C.text}>
               Đơn gia nhập đã duyệt
             </T>
@@ -349,15 +440,39 @@ export default function ClanMsMockup({ className = '' }) {
       <g transform="translate(12 398) rotate(-4)">
         <Float delay={0.8} duration={6}>
           <g filter="url(#cm-shadow)">
-            <rect width="158" height="128" rx="10" fill={C.paper} stroke={C.crimson} strokeWidth="1.2" />
-            <rect x="5" y="5" width="148" height="118" rx="7" fill="none" stroke={C.gold} strokeWidth="0.6" />
+            <rect
+              width="158"
+              height="128"
+              rx="10"
+              fill={C.paper}
+              stroke={C.crimson}
+              strokeWidth="1.2"
+            />
+            <rect
+              x="5"
+              y="5"
+              width="148"
+              height="118"
+              rx="7"
+              fill="none"
+              stroke={C.gold}
+              strokeWidth="0.6"
+            />
             {[
               [5, 5],
               [153, 5],
               [5, 123],
               [153, 123],
             ].map(([x, y]) => (
-              <rect key={`${x}-${y}`} x={x - 2.5} y={y - 2.5} width="5" height="5" transform={`rotate(45 ${x} ${y})`} fill={C.gold} />
+              <rect
+                key={`${x}-${y}`}
+                x={x - 2.5}
+                y={y - 2.5}
+                width="5"
+                height="5"
+                transform={`rotate(45 ${x} ${y})`}
+                fill={C.gold}
+              />
             ))}
             <T x={79} y={25} size={6} weight={800} fill={C.goldText} anchor="middle" ls={0.8}>
               THÔNG BÁO · CHO TOÀN HỌ

@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 import { mailto } from '../data/site.js';
+import { useT } from '../i18n/index.jsx';
 import ClanMsMockup from '../mockups/ClanMsMockup.jsx';
 import TipVisionMockup from '../mockups/TipVisionMockup.jsx';
 import { ArrowRight, Bell, Chat, Hand, Moon, Scan, Tree, Wallet } from './icons.jsx';
@@ -83,6 +84,7 @@ function useTilt() {
 }
 
 export default function ProductCard({ product, reverse = false, onLearnMore }) {
+  const t = useT();
   const Mockup = mockups[product.id];
   const tilt = useTilt();
   const { accent } = product;
@@ -102,14 +104,18 @@ export default function ProductCard({ product, reverse = false, onLearnMore }) {
       />
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: `linear-gradient(90deg, transparent, ${accent.from}, ${accent.to}, transparent)` }}
+        style={{
+          background: `linear-gradient(90deg, transparent, ${accent.from}, ${accent.to}, transparent)`,
+        }}
       />
 
-      <div className={`relative order-2 p-7 pt-2 sm:p-10 sm:pt-4 lg:p-14 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
+      <div
+        className={`relative order-2 p-7 pt-2 sm:p-10 sm:pt-4 lg:p-14 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}
+      >
         <div className="flex flex-wrap items-center gap-2">
           <a
             href={mailto(product.notifySubject)}
-            title={`${product.notifyLabel} — gửi email cho chúng tôi`}
+            title={`${product.notifyLabel} — ${t.products.emailUs}`}
             className="group inline-flex min-h-8 items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold transition-colors hover:bg-white/5"
             style={{ borderColor: `${accent.text}55`, color: accent.text }}
           >
@@ -136,7 +142,10 @@ export default function ProductCard({ product, reverse = false, onLearnMore }) {
         <div className="mt-8 flex items-center gap-4">
           <ProductLogo id={product.id} />
           <div>
-            <h3 id={`${product.id}-title`} className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h3
+              id={`${product.id}-title`}
+              className="text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            >
               {product.name}
             </h3>
             <p className="text-sm text-zinc-500">{product.audience}</p>
@@ -149,8 +158,8 @@ export default function ProductCard({ product, reverse = false, onLearnMore }) {
         <p className="mt-4 leading-relaxed text-zinc-400">{product.summary}</p>
 
         <ul className="mt-8 space-y-5">
-          {product.highlights.map((item) => {
-            const Icon = icons[item.icon];
+          {product.highlights.map((item, index) => {
+            const Icon = icons[product.icons[index]];
             return (
               <li key={item.title} className="flex gap-4">
                 <span
@@ -174,7 +183,7 @@ export default function ProductCard({ product, reverse = false, onLearnMore }) {
             onClick={() => onLearnMore(product)}
             className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 font-semibold text-black transition hover:bg-zinc-200"
           >
-            Tìm hiểu thêm
+            {t.products.learnMore}
             <ArrowRight className="size-5 transition-transform group-hover:translate-x-0.5" />
           </button>
           <a
@@ -192,7 +201,7 @@ export default function ProductCard({ product, reverse = false, onLearnMore }) {
         onPointerLeave={tilt.onPointerLeave}
       >
         <motion.div style={tilt.style} className="w-full max-w-[540px]">
-          <Mockup className="h-auto w-full" />
+          <Mockup className="h-auto w-full" title={t.mockups[product.id]} />
         </motion.div>
       </div>
     </Reveal>

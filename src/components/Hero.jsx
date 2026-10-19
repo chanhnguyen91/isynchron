@@ -1,40 +1,28 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Fragment, useRef } from 'react';
 
+import { useT } from '../i18n/index.jsx';
 import { ArrowDown, ArrowRight } from './icons.jsx';
 import ParticleField from './ParticleField.jsx';
 
 const ease = [0.22, 1, 0.36, 1];
 
-// The headline, split into words so they can rise in one after another; `glow` words
-// carry the brand gradient.
-const headline = [
-  { text: 'Đồng' },
-  { text: 'bộ' },
-  { text: 'hóa' },
-  { text: 'Trí', glow: true },
-  { text: 'tuệ', glow: true },
-  { text: 'Nhân', glow: true },
-  { text: 'tạo', glow: true },
-  { text: '&' },
-  { text: 'Tiềm', glow: true },
-  { text: 'năng', glow: true },
-  { text: 'Con', glow: true },
-  { text: 'người.', glow: true },
-];
-
 // Each gradient word shows its own slice of one long gradient, so the colour runs
 // blue → purple → green across the phrase instead of restarting on every word.
-const glowWords = headline.filter((word) => word.glow);
-function gradientSlice(word) {
+function gradientSlice(glowWords, word) {
   const index = glowWords.indexOf(word);
   return {
     backgroundSize: `${glowWords.length * 100}% 100%`,
-    backgroundPosition: `${(index / (glowWords.length - 1)) * 100}% 0`,
+    backgroundPosition: `${(index / Math.max(glowWords.length - 1, 1)) * 100}% 0`,
   };
 }
 
 export default function Hero() {
+  const t = useT();
+  // Split into words so they can rise in one after another; `glow` words carry the brand
+  // gradient and `breakBefore` starts the second line on wide screens.
+  const { headline } = t.hero;
+  const glowWords = headline.filter((word) => word.glow);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 120]);
@@ -67,22 +55,22 @@ export default function Hero() {
           className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm"
         >
           <span className="size-1.5 animate-pulse-soft rounded-full bg-neon" aria-hidden="true" />
-          Không gian sáng tạo · Ý tưởng × Internet × AI
+          {t.hero.eyebrow}
         </motion.p>
 
         <h1 className="mt-7 text-[2.6rem] leading-[1.12] font-bold tracking-[-0.035em] text-balance text-white sm:text-6xl lg:text-7xl lg:leading-[1.08]">
           {headline.map((word, index) => (
-            <Fragment key={index}>
+            <Fragment key={`${word.text}-${index}`}>
+              {word.breakBefore && <br className="hidden lg:block" />}
               <motion.span
                 className={`inline-block pb-[0.06em] ${word.glow ? 'text-gradient' : ''}`}
-                style={word.glow ? gradientSlice(word) : undefined}
+                style={word.glow ? gradientSlice(glowWords, word) : undefined}
                 initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 0.8, ease, delay: 0.25 + index * 0.06 }}
               >
                 {word.text}
               </motion.span>{' '}
-              {headline[index + 1]?.text === '&' && <br className="hidden lg:block" />}
             </Fragment>
           ))}
         </h1>
@@ -93,8 +81,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease, delay: 1.05 }}
           className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl"
         >
-          Nơi những ý tưởng đột phá hội tụ cùng sức mạnh của internet và Trí tuệ Nhân tạo để kiến tạo
-          giá trị mỗi ngày.
+          {t.hero.sub}
         </motion.p>
 
         <motion.div
@@ -108,14 +95,14 @@ export default function Hero() {
             className="group relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-full px-7 text-base font-semibold text-black shadow-[0_0_40px_-8px_rgb(42_245_152/0.7)] transition-transform hover:scale-[1.02] active:scale-[0.99]"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-[#7FB2FF] via-[#C3A6FF] to-neon" />
-            <span className="relative">Khám phá Ứng dụng</span>
+            <span className="relative">{t.hero.primary}</span>
             <ArrowRight className="relative size-5 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
             href="#vision"
             className="glass inline-flex min-h-12 items-center justify-center rounded-full px-7 text-base font-medium text-white transition-colors hover:bg-white/10"
           >
-            Đọc Tầm nhìn của chúng tôi
+            {t.hero.secondary}
           </a>
         </motion.div>
 
@@ -125,7 +112,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.5 }}
           className="mt-10 text-sm text-zinc-500"
         >
-          Đang xây dựng:{' '}
+          {t.hero.building}{' '}
           <a href="#tipvision" className="text-zinc-300 underline-offset-4 hover:underline">
             TipVision
           </a>{' '}
@@ -138,13 +125,13 @@ export default function Hero() {
 
       <motion.a
         href="#philosophy"
-        aria-label="Cuộn xuống phần Triết lý"
+        aria-label={t.hero.scrollLabel}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.8 }}
         className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-300 sm:flex"
       >
-        <span className="text-[11px] tracking-[0.25em] uppercase">Cuộn</span>
+        <span className="text-[11px] tracking-[0.25em] uppercase">{t.hero.scroll}</span>
         <motion.span
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}

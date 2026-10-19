@@ -10,12 +10,8 @@ export const site = {
   },
 };
 
-export const nav = [
-  { id: 'philosophy', label: 'Triết lý' },
-  { id: 'vision', label: 'Tầm nhìn' },
-  { id: 'products', label: 'Sản phẩm' },
-  { id: 'connect', label: 'Kết nối' },
-];
+/** Section ids, in page order; their labels are `nav.<id>` in the dictionaries. */
+export const nav = ['philosophy', 'vision', 'products', 'connect'];
 
 /** A mailto link with the subject (and optional body) already filled in. */
 export function mailto(subject, body = '') {

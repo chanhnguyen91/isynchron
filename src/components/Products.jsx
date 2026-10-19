@@ -1,11 +1,17 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { products } from '../data/products.js';
+import { useT } from '../i18n/index.jsx';
 import ProductCard from './ProductCard.jsx';
 import ProductDetails from './ProductDetails.jsx';
 import SectionHeading from './SectionHeading.jsx';
 
 export default function Products() {
+  const t = useT();
+  const items = useMemo(
+    () => products.map((product) => ({ ...product, ...t.products.items[product.id] })),
+    [t],
+  );
   const [open, setOpen] = useState(null);
   const close = useCallback(() => setOpen(null), []);
 
@@ -14,16 +20,16 @@ export default function Products() {
       <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-white/15 to-transparent" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Sản phẩm"
+          eyebrow={t.products.eyebrow}
           title={
             <>
-              Hai ứng dụng. <span className="text-gradient">Một nhịp đồng bộ.</span>
+              {t.products.titleLead} <span className="text-gradient">{t.products.titleGlow}</span>
             </>
           }
-          intro="Mỗi ứng dụng giải một bài toán đời thường bằng internet và AI. Hình minh họa được vẽ lại bằng code từ chính giao diện đang phát triển."
+          intro={t.products.intro}
         />
         <div className="mt-16 space-y-8 sm:space-y-10">
-          {products.map((product, index) => (
+          {items.map((product, index) => (
             <ProductCard
               key={product.id}
               product={product}
