@@ -4,7 +4,6 @@ export const site = {
   domain: 'isynchron.com',
   email: 'hello@isynchron.com',
   social: {
-    github: 'https://github.com/chanhnguyen91',
     linkedin: 'https://www.linkedin.com/',
     twitter: 'https://x.com/',
   },

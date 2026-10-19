@@ -1,13 +1,12 @@
 import { mailto, nav, site } from '../data/site.js';
 import { useT } from '../i18n/index.jsx';
-import { ArrowRight, GitHub, LinkedIn, Mail, XTwitter } from './icons.jsx';
+import { ArrowRight, LinkedIn, Mail, XTwitter } from './icons.jsx';
 import Logo from './Logo.jsx';
 import { Reveal } from './Reveal.jsx';
 
 export default function Footer() {
   const t = useT();
   const socials = [
-    { label: 'GitHub', href: site.social.github, icon: GitHub },
     { label: 'LinkedIn', href: site.social.linkedin, icon: LinkedIn },
     { label: 'X (Twitter)', href: site.social.twitter, icon: XTwitter },
     { label: t.footer.emailLabel, href: `mailto:${site.email}`, icon: Mail },
