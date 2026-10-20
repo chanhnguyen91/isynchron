@@ -4,6 +4,7 @@ import { products } from '../data/products.js';
 import { useT } from '../i18n/index.jsx';
 import ProductCard from './ProductCard.jsx';
 import ProductDetails from './ProductDetails.jsx';
+import SectionDivider from './SectionDivider.jsx';
 import SectionHeading from './SectionHeading.jsx';
 
 export default function Products() {
@@ -17,7 +18,7 @@ export default function Products() {
 
   return (
     <section id="products" className="relative px-4 py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <SectionDivider />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={t.products.eyebrow}

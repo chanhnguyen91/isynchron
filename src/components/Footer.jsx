@@ -3,6 +3,7 @@ import { useT } from '../i18n/index.jsx';
 import { ArrowRight, LinkedIn, Mail, XTwitter } from './icons.jsx';
 import Logo from './Logo.jsx';
 import { Reveal } from './Reveal.jsx';
+import SectionDivider from './SectionDivider.jsx';
 
 export default function Footer() {
   const t = useT();
@@ -13,6 +14,7 @@ export default function Footer() {
   ];
   return (
     <footer id="connect" className="relative overflow-hidden px-4 pt-24 pb-10 sm:pt-32">
+      <SectionDivider />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[520px] bg-[radial-gradient(60%_80%_at_50%_100%,rgb(61_123_255/0.22),rgb(139_92_255/0.10)_45%,transparent_75%)]" />
       <div className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-60" />
 

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useT } from '../i18n/index.jsx';
 import { Ear, Rocket, Sync } from './icons.jsx';
 import { Reveal, RevealGroup, RevealItem } from './Reveal.jsx';
+import SectionDivider from './SectionDivider.jsx';
 
 // Same order as `vision.steps` in the dictionaries.
 const stepIcons = [Ear, Sync, Rocket];
@@ -12,7 +13,7 @@ export default function Vision() {
   const { quote } = t.vision;
   return (
     <section id="vision" className="relative px-4 py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <SectionDivider />
       <div className="pointer-events-none absolute top-1/4 left-1/2 -z-10 h-[480px] w-[760px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(139_92_255/0.14),transparent)] blur-2xl" />
 
       <div className="mx-auto max-w-6xl">
