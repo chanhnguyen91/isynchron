@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Fragment, useRef } from 'react';
 
+import { products } from '../data/products.js';
 import { useT } from '../i18n/index.jsx';
 import { ArrowDown, ArrowRight } from './icons.jsx';
 import ParticleField from './ParticleField.jsx';
+import ProductLogo from './ProductLogo.jsx';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -106,21 +108,35 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="mt-10 text-sm text-zinc-500"
+        {/* The two apps, with their real icons, as the first proof of what the studio makes. */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease, delay: 1.45 }}
+          className="mt-12 flex flex-col items-center gap-3"
         >
-          {t.hero.building}{' '}
-          <a href="#tipvision" className="text-zinc-300 underline-offset-4 hover:underline">
-            TipVision
-          </a>{' '}
-          ·{' '}
-          <a href="#clan-ms" className="text-zinc-300 underline-offset-4 hover:underline">
-            Clan-MS
-          </a>
-        </motion.p>
+          <p className="text-[11px] font-medium tracking-[0.22em] text-zinc-500 uppercase">
+            {t.hero.building}
+          </p>
+          <ul className="flex flex-wrap justify-center gap-3">
+            {products.map((product) => (
+              <li key={product.id}>
+                <a
+                  href={`#${product.id}`}
+                  className="glass group inline-flex items-center gap-3 rounded-2xl py-2 pr-4 pl-2 transition-colors hover:bg-white/10"
+                >
+                  <ProductLogo id={product.id} className="size-9" />
+                  <span className="text-left leading-tight">
+                    <span className="block text-sm font-semibold text-white">{product.name}</span>
+                    <span className="block text-xs text-zinc-400">
+                      {t.products.items[product.id].status}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </motion.div>
 
       <motion.a

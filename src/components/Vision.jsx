@@ -1,38 +1,11 @@
-import { animate, motion, useInView, useReducedMotion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import { useT } from '../i18n/index.jsx';
 import { Ear, Rocket, Sync } from './icons.jsx';
 import { Reveal, RevealGroup, RevealItem } from './Reveal.jsx';
 
-// Same order as `vision.steps` and `vision.facts` in the dictionaries.
+// Same order as `vision.steps` in the dictionaries.
 const stepIcons = [Ear, Sync, Rocket];
-
-// Every figure is a fact about the two apps today, not a projection.
-const factValues = [2, 7, 17, 5];
-
-function CountUp({ to }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-60px' });
-  const reduced = useReducedMotion();
-  const [value, setValue] = useState(reduced ? to : 0);
-
-  useEffect(() => {
-    if (!inView || reduced) return;
-    const controls = animate(0, to, {
-      duration: 1.4,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (latest) => setValue(Math.round(latest)),
-    });
-    return () => controls.stop();
-  }, [inView, reduced, to]);
-
-  return (
-    <span ref={ref} className="text-gradient tabular-nums">
-      {value}
-    </span>
-  );
-}
 
 export default function Vision() {
   const t = useT();
@@ -96,19 +69,20 @@ export default function Vision() {
           </RevealGroup>
         </div>
 
-        <RevealGroup
-          as="dl"
-          className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 lg:grid-cols-4"
-        >
-          {t.vision.facts.map((label, index) => (
-            <RevealItem key={index} className="flex flex-col gap-2 bg-ink p-6 sm:p-8">
-              <dt className="order-2 text-sm leading-snug text-zinc-400">{label}</dt>
-              <dd className="order-1 text-4xl font-semibold tracking-tight sm:text-5xl">
-                <CountUp to={factValues[index]} />
-              </dd>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        {/* Who the apps are for, in their own words, instead of vanity numbers. */}
+        <Reveal className="mt-20 text-center">
+          <p className="eyebrow">{t.vision.audienceTitle}</p>
+          <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2.5">
+            {t.vision.audience.map((who) => (
+              <li
+                key={who}
+                className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-zinc-300"
+              >
+                {who}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

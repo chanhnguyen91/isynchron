@@ -23,7 +23,8 @@ export default function Products() {
           eyebrow={t.products.eyebrow}
           title={
             <>
-              {t.products.titleLead} <span className="text-gradient">{t.products.titleGlow}</span>
+              {t.products.titleLead} <br className="hidden sm:block" />
+              <span className="text-gradient">{t.products.titleGlow}</span>
             </>
           }
           intro={t.products.intro}
