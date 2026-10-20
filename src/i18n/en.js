@@ -21,10 +21,8 @@ export const en = {
     eyebrow: 'Independent mobile app studio',
     // Each entry rises in on its own and never splits across lines, so keep pairs together.
     headline: [
-      { text: 'Less to' },
-      { text: 'remember.' },
-      { text: 'More time', glow: true, breakBefore: true },
-      { text: 'to live.', glow: true },
+      { text: 'Less to remember.' },
+      { text: 'More time to live.', glow: true, breakBefore: true },
     ],
     sub: 'iSynchron makes small, focused phone apps that remember the details for you — your tips after every shift, your family’s memorial days, who’s who in the family tree.',
     primary: 'Explore the apps',

@@ -10,7 +10,7 @@ export default function SectionHeading({ eyebrow, title, intro, align = 'center'
       </h2>
       {intro && (
         <p
-          className={`mt-5 text-lg leading-relaxed text-zinc-400 ${centered ? 'mx-auto max-w-2xl' : 'max-w-2xl'}`}
+          className={`mt-5 text-lg leading-relaxed text-pretty text-zinc-400 ${centered ? 'mx-auto max-w-2xl' : 'max-w-2xl'}`}
         >
           {intro}
         </p>

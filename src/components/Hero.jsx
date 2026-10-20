@@ -60,10 +60,10 @@ export default function Hero() {
           {t.hero.eyebrow}
         </motion.p>
 
-        <h1 className="mt-7 text-[2.6rem] leading-[1.12] font-bold tracking-[-0.035em] text-balance text-white sm:text-6xl lg:text-7xl lg:leading-[1.08]">
+        <h1 className="mt-7 text-[2.25rem] leading-[1.15] font-bold tracking-[-0.035em] text-balance text-white sm:text-6xl lg:text-7xl lg:leading-[1.08]">
           {headline.map((word, index) => (
             <Fragment key={`${word.text}-${index}`}>
-              {word.breakBefore && <br className="hidden lg:block" />}
+              {word.breakBefore && <br />}
               <motion.span
                 className={`inline-block pb-[0.06em] ${word.glow ? 'text-gradient' : ''}`}
                 style={word.glow ? gradientSlice(glowWords, word) : undefined}
@@ -81,7 +81,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 1.05 }}
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl"
+          className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-zinc-400 sm:text-xl"
         >
           {t.hero.sub}
         </motion.p>
